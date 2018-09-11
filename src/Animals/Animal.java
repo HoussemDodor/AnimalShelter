@@ -12,36 +12,24 @@ public abstract class Animal {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
-
     public Animals.Gender getGender() {
         return Gender;
-    }
-
-    public void setGender(Animals.Gender gender) {
-        Gender = gender;
     }
 
     public Reservor getReservedBy() {
         return ReservedBy;
     }
 
-    public void setReservedBy(Reservor reservedBy) {
-        ReservedBy = reservedBy;
-    }
-
     // Constructor
     public Animal(String name, Animals.Gender gender) {
-        setName(name);
-        setGender(gender);
+        this.Name = name;
+        this.Gender = gender;
     }
 
     // Methods
     public boolean Reserve(String reservedBy) {
         if (getReservedBy() == null) {
-            this.setReservedBy(new Reservor(reservedBy, LocalDateTime.now()));
+            this.ReservedBy = new Reservor(reservedBy, LocalDateTime.now());
             return true;
         }
         return  false;
@@ -53,6 +41,6 @@ public abstract class Animal {
         {
             reserved = String.format("reserved by %d", getReservedBy().getName());
         }
-        return String.format("%d, %d, $d", this.getName(), this.getGender(), reserved);
+        return String.format("%d, %d, %d", this.getName(), this.getGender(), reserved);
     }
 }

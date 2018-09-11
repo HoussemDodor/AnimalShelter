@@ -47,5 +47,12 @@ public abstract class Animal {
         return  false;
     }
 
-
+    public String ToString(){
+        String reserved = "not reserved";
+        if (this.ReservedBy != null)
+        {
+            reserved = String.format("reserved by %d", getReservedBy().getName());
+        }
+        return String.format("%d, %d, $d", this.getName(), this.getGender(), reserved);
+    }
 }

@@ -1,18 +1,28 @@
 package Animals;
 import java.time.*;
 
-public class Dog {
-    public LocalDateTime LastWalk;
+public class Dog extends Animal{
 
+    // fields
+    private LocalDateTime LastWalk;
+
+    public boolean NeedsWalk() {
+        return  (LocalDateTime.now().getDayOfYear() - getLastWalk().getDayOfYear()) >= 1;
+    }
+
+    // properties
     public LocalDateTime getLastWalk() {
         return LastWalk;
     }
 
-    public void setLastWalk(LocalDateTime lastWalk) {
-        LastWalk = lastWalk;
+    // constructor
+    public Dog(String name, Gender gender) {
+        super(name, gender);
+        this.LastWalk = LocalDateTime.now();
     }
 
-    public boolean NeedsWalk() {
-        return  (LocalDateTime.now().getDayOfYear() - getLastWalk().getDayOfYear()) >= 1;
+    // Methods
+    public String ToString() {
+        return super.toString() + String.format(", last walk: %d", this.LastWalk.toString());
     }
 }

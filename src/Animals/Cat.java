@@ -8,10 +8,6 @@ public class Cat extends Animal{
         return BadHabits;
     }
 
-    public void setBadHabits(String badHabits) {
-        BadHabits = badHabits;
-    }
-
     public Cat(String name, Gender gender, String badHabits){
         super(name, gender);
         this.BadHabits = badHabits;

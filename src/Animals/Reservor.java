@@ -3,28 +3,18 @@ import java.time.*;
 
 public class Reservor {
 
-    public String Name;
-    public LocalDateTime ReservedAt;
+    private String Name;
+    private LocalDateTime ReservedAt;
 
     public String getName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public LocalDateTime getReservedAt() {
-        return ReservedAt;
-    }
-
-    public void setReservedAt(LocalDateTime reservedAt) {
-        ReservedAt = reservedAt;
-    }
+    public LocalDateTime getReservedAt() { return ReservedAt; }
 
     public Reservor(String name, LocalDateTime reservedAt) {
-        Name = name;
-        ReservedAt = reservedAt;
+        this.Name = name;
+        this.ReservedAt = reservedAt;
     }
 
 }
